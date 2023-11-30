@@ -3,6 +3,7 @@ import * as Input from './components/Input'
 import { Mail } from 'lucide-react'
 import { UploadTrigger } from './components/Form/FileInput/UploadTrigger'
 import { ImagePreview } from './components/Form/FileInput/ImagePreview'
+import { FileList } from './components/Form/FileInput/FileList'
 import { Root } from './components/Form/FileInput/Root'
 import { ControlInput } from './components/Form/FileInput/ControlInput'
 export default function Home() {
@@ -167,6 +168,7 @@ export default function Home() {
 
             <Root>
               <UploadTrigger />
+              <FileList />
 
               <ControlInput multiple />
             </Root>
