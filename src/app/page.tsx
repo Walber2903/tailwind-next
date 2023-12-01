@@ -1,11 +1,16 @@
 import { SettingsTabs } from './components/SettingsTabs'
 import * as Input from './components/Input'
-import { Mail } from 'lucide-react'
+
+import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { UploadTrigger } from './components/Form/FileInput/UploadTrigger'
 import { ImagePreview } from './components/Form/FileInput/ImagePreview'
 import { FileList } from './components/Form/FileInput/FileList'
 import { Root } from './components/Form/FileInput/Root'
 import { ControlInput } from './components/Form/FileInput/ControlInput'
+import { SelectList } from './components/Form/SelectList'
+import { SelectItem } from './components/Form/SelectList/SelectItem'
+import { TextArea } from './components/Form/TextArea'
+
 export default function Home() {
   return (
     <>
@@ -123,9 +128,11 @@ export default function Home() {
             >
               Country
             </label>
-
-            <div></div>
-
+            <SelectList placeholder="Select a country">
+              <SelectItem value="br" text="Brazil" />
+              <SelectItem value="cd" text="Canada" />
+              <SelectItem value="us" text="United States" />
+            </SelectList>
             <div />
           </div>
 
@@ -137,7 +144,14 @@ export default function Home() {
               Timezone
             </label>
 
-            <div></div>
+            <SelectList placeholder="Select a Timezone">
+              <SelectItem value="utc-03" text="Sao Paulo (UTC-03:00)" />
+              <SelectItem value="utc-04" text="Toronto (UTC-04:00)" />
+              <SelectItem
+                value="utc-08"
+                text="Pacific Standard Time (UTC-08:00)"
+              />
+            </SelectList>
 
             <div />
           </div>
@@ -150,7 +164,60 @@ export default function Home() {
               </span>
             </label>
 
-            <div></div>
+            <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <SelectList placeholder="" defaultValue="normal">
+                  <SelectItem
+                    value="normal"
+                    defaultChecked
+                    text="Normal Text"
+                  />
+                  <SelectItem value="md" text="Markdown" />
+                  <SelectItem value="it" text="Italic" />
+                </SelectList>
+
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <Link className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <List className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                  >
+                    <ListOrdered
+                      className="h-4 w-4 text-zinc-500"
+                      strokeWidth={3}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <TextArea
+                id="bio"
+                defaultValue="I'm a fullstack engineer based in Vancouver, Canada. I'm specializing in React and this ecossystem, with a strong backend with nodeJs and python."
+              />
+            </div>
 
             <div />
           </div>
