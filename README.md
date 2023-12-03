@@ -9,10 +9,11 @@ Used this figma to build the project:
 
 In this project we can find:
 
-- Selectors and State
+- React Selectors and State
+- NextJS
+- Radix
 - Responsivity
 - Dark Mode
-- Radix
 - React flags
 - Menu collapseble
 - Formkit auto animate to dropdowns
