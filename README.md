@@ -9,12 +9,12 @@ Used this figma to build the project:
 
 In this project we can find:
 
-> Selectors and State
-> Responsivity
-> Dark Mode
-> Radix
-> React flags
-> Menu collapseble
-> Formkit auto animate to dropdowns
-> React scroll area to mobile integrations
-> Upload to preview Images
+- Selectors and State
+- Responsivity
+- Dark Mode
+- Radix
+- React flags
+- Menu collapseble
+- Formkit auto animate to dropdowns
+- React scroll area to mobile integrations
+- Upload to preview Images
