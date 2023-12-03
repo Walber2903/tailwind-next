@@ -45,27 +45,29 @@ export default function Home() {
           className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200 dark:divide-zinc-700"
           action=""
         >
-          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
+          <div className="grid gap-3 lg:grid-cols-form">
             <label
               htmlFor="firstName"
               className="font-zinc-700 text-sm font-medium dark:text-zinc-300"
             >
               Name
             </label>
-            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
+            <div className="grid gap-6 lg:grid-cols-2">
               <Input.InputRoot>
-                <Input.InputControl id="firstName" defaultValue="Walber" />
+                <Input.InputControl
+                  name="firstName"
+                  id="firstName"
+                  type="text"
+                  defaultValue="Walber"
+                />
               </Input.InputRoot>
-              <div className="flex flex-col gap-3 lg:block">
-                <label
-                  htmlFor="lastName"
-                  className="font-zinc-700 text-sm font-medium dark:text-zinc-300 lg:sr-only"
-                >
-                  Last Name
-                </label>
-              </div>
+
               <Input.InputRoot>
-                <Input.InputControl id="lastName" defaultValue="Araujo" />
+                <Input.InputControl
+                  name="lastName"
+                  type="text"
+                  defaultValue="Araujo"
+                />
               </Input.InputRoot>
             </div>
             <div />
