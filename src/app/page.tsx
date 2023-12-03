@@ -1,5 +1,6 @@
 import { SettingsTabs } from './components/SettingsTabs'
 import * as Input from './components/Input'
+import * as Select from './components/Form/Select'
 
 import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { UploadTrigger } from './components/Form/FileInput/UploadTrigger'
@@ -7,10 +8,9 @@ import { ImagePreview } from './components/Form/FileInput/ImagePreview'
 import { FileList } from './components/Form/FileInput/FileList'
 import { Root } from './components/Form/FileInput/Root'
 import { ControlInput } from './components/Form/FileInput/ControlInput'
-import { SelectList } from './components/Form/SelectList'
-import { SelectItem } from './components/Form/SelectList/SelectItem'
 import { TextArea } from './components/Form/TextArea'
 import { Button } from './components/Button'
+import { CountrySelect } from './CountrySelect'
 
 export default function Home() {
   return (
@@ -129,40 +129,33 @@ export default function Home() {
             <div />
           </div>
 
-          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-            <label
-              htmlFor="country"
-              className="font-zinc-700 text-sm font-medium dark:text-zinc-300"
-            >
+          <label className="grid gap-3 pt-5 lg:grid-cols-form">
+            <span className="flex flex-col text-sm font-medium leading-relaxed text-zinc-700 dark:text-zinc-100">
               Country
-            </label>
-            <SelectList placeholder="Select a country">
-              <SelectItem value="br" text="Brazil" />
-              <SelectItem value="cd" text="Canada" />
-              <SelectItem value="us" text="United States" />
-            </SelectList>
-            <div />
-          </div>
+            </span>
 
-          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
-            <label
-              htmlFor="timezone"
-              className="font-zinc-700 text-sm font-medium dark:text-zinc-300"
-            >
+            <CountrySelect />
+          </label>
+
+          <label className="grid gap-3 pt-5 lg:grid-cols-form">
+            <span className="flex flex-col text-sm font-medium leading-relaxed text-zinc-700 dark:text-zinc-100">
               Timezone
-            </label>
+            </span>
+            <Select.Root name="timezone">
+              <Select.Trigger>
+                <Select.Value placeholder="Select your timezone..." />
+              </Select.Trigger>
 
-            <SelectList placeholder="Select a Timezone">
-              <SelectItem value="utc-03" text="Sao Paulo (UTC-03:00)" />
-              <SelectItem value="utc-04" text="Toronto (UTC-04:00)" />
-              <SelectItem
-                value="utc-08"
-                text="Pacific Standard Time (UTC-08:00)"
-              />
-            </SelectList>
-
-            <div />
-          </div>
+              <Select.Content>
+                <Select.Item value="utc-3">
+                  <Select.ItemText>
+                    Pacific Standard Time (PST)
+                    <span className="text-sm text-zinc-500">UTC 08:00</span>
+                  </Select.ItemText>
+                </Select.Item>
+              </Select.Content>
+            </Select.Root>
+          </label>
 
           <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <label
@@ -175,34 +168,38 @@ export default function Home() {
               </span>
             </label>
 
-            <div className="space-y-3">
-              <div className="flex flex-col gap-3 lg:grid lg:grid-cols-2">
-                <SelectList placeholder="" defaultValue="normal">
-                  <SelectItem
-                    value="normal"
-                    defaultChecked
-                    text="Normal Text"
-                  />
-                  <SelectItem value="md" text="Markdown" />
-                  <SelectItem value="it" text="Italic" />
-                </SelectList>
+            <div className="flex flex-col gap-3">
+              <div className="grid gap-3 lg:grid-cols-2">
+                <Select.Root defaultValue="normal">
+                  <Select.Trigger>
+                    <Select.Value />
+                  </Select.Trigger>
 
+                  <Select.Content>
+                    <Select.Item value="normal">
+                      <Select.ItemText>Normal text</Select.ItemText>
+                    </Select.Item>
+                    <Select.Item value="md">
+                      <Select.ItemText>Markdown</Select.ItemText>
+                    </Select.Item>
+                  </Select.Content>
+                </Select.Root>
                 <div className="flex items-center gap-1">
-                  <Button type="button" variant="ghost">
-                    <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  <Button variant="ghost">
+                    <Bold className="h-4 w-4 text-zinc-400" strokeWidth={3} />
                   </Button>
-                  <Button type="button" variant="ghost">
-                    <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  <Button variant="ghost">
+                    <Italic className="h-4 w-4 text-zinc-400" strokeWidth={3} />
                   </Button>
-                  <Button type="button" variant="ghost">
-                    <Link className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  <Button variant="ghost">
+                    <Link className="h-4 w-4 text-zinc-400" strokeWidth={3} />
                   </Button>
-                  <Button type="button" variant="ghost">
-                    <List className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  <Button variant="ghost">
+                    <List className="h-4 w-4 text-zinc-400" strokeWidth={3} />
                   </Button>
-                  <Button type="button" variant="ghost">
+                  <Button variant="ghost">
                     <ListOrdered
-                      className="h-4 w-4 text-zinc-500"
+                      className="h-4 w-4 text-zinc-400"
                       strokeWidth={3}
                     />
                   </Button>
