@@ -5,12 +5,9 @@ import * as Select from './components/Form/Select'
 import { countries } from './components/utils/countries'
 import Flag from 'react-world-flags'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface CountrySelectProps {}
-
 type CountryCode = keyof typeof countries
 
-export function CountrySelect(props: CountrySelectProps) {
+export function CountrySelect() {
   const [value, setValue] = useState<CountryCode | undefined>(undefined)
 
   function handleCountrySelected(value: string) {

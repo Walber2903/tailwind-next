@@ -1,13 +1,17 @@
 import { LogOut } from 'lucide-react'
 import { Button } from '../Button'
+import Image from 'next/image'
 
 export function Profile() {
   return (
     <div className="grid grid-cols-profile items-center gap-3">
-      <img
-        src="https://github.com/walber2903.png"
+      <Image
+        width={40}
+        height={40}
+        src="/Title.jpg"
         className="h-10 w-10 rounded-full"
         alt=""
+        style={{ objectFit: 'contain' }}
       />
       <div className="flex flex-col truncate">
         <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-100">

@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ComponentProps } from 'react'
+import { ButtonHTMLAttributes } from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { tv, VariantProps } from 'tailwind-variants'
 
