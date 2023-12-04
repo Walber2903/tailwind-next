@@ -19,3 +19,13 @@ In this project we can find:
 - Formkit auto animate to dropdowns
 - React scroll area to mobile integrations
 - Upload to preview Images
+
+Bellow you can check the result of the construction.
+
+![Site css with tailwind dark mode](./public/Screenshot_1.png)
+
+---
+
+![Site css with tailwind](./public/Screenshot_2.png)
+
+You can check the result in this [URL](https://walber2903.github.io/tailwind-next/)
