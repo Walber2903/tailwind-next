@@ -1,5 +1,11 @@
 {
   "name": "tailwind-next",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "volta": {
+    "node": "18.17.0"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
